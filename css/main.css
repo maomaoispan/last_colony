@@ -1,0 +1,1310 @@
+* {
+    margin: 0;
+    padding: 0;
+    /*overflow: hidden;*/
+}
+
+html {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#container {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: url("../images/ui/background.jpg");
+    background: linear-gradient(135deg, hsl(31, 100%, 55%) 0%, hsl(25, 100%, 83%) 20%, hsl(80, 100%, 83%) 50%, hsl(173, 88%, 65%) 70%, hsl(233, 74%, 62%) 100%);
+    background: -webkit-linear-gradient(135deg, hsl(31, 100%, 55%) 0%, hsl(25, 100%, 83%) 20%, hsl(80, 100%, 83%) 50%, hsl(173, 88%, 65%) 70%, hsl(233, 74%, 62%) 100%);
+
+    background-size: 100% 100%;
+}
+
+/********************************/
+/*                              */
+/*           登录 and 注册       */
+/*                              */
+/********************************/
+
+#login, #register, #mode_Select {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 70%;
+    height: 80%;
+
+}
+
+.title {
+    position: absolute;
+    left: 30%;
+    top: 0;
+    width: 40%;
+    height: 10%;
+    background: green;
+    border-radius: 5% 5% 0 0 / 25% 25% 0 0;
+    background: linear-gradient(hsl(25, 100%, 83%) 0%, hsl(31, 100%, 55%) 20%);
+    background: -webkit-linear-gradient(hsl(25, 100%, 83%) 0%, hsl(31, 100%, 55%) 20%);
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#frm_Login, #frm_Register, #btns_Mode {
+    position: absolute;
+    left: 0;
+    top: 10%;
+    width: 100%;
+    height: 90%;
+    border-radius: 5%/7.5%;
+    background: linear-gradient(hsl(31, 100%, 55%) 0%, hsl(25, 100%, 83%) 20%);
+    background: -webkit-linear-gradient(hsl(31, 100%, 55%) 0%, hsl(25, 100%, 83%) 20%);
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#frm_Login label, #frm_Register label {
+    background-color: green;
+    border-radius: 5% /10%;
+}
+
+#frm_Login input, #frm_Register input {
+    border-radius: 2% /12%;
+}
+
+#frm_Login input:focus, #frm_Register input:focus {
+    box-shadow: 0 0 5px 2px gray, 0 0 5px 2px gray inset;
+}
+
+/* login */
+
+#login {
+    z-index: auto;
+}
+
+#frm_Login label {
+    position: absolute;
+    left: 10%;
+    width: 20%;
+    height: 15%;
+}
+
+#frm_Login input {
+    position: absolute;
+    left: 40%;
+    width: 50%;
+    height: 15%;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#lbl_login_Name, #txt_Login_Name {
+    top: 20%;
+}
+
+#lbl_Login_PWD, #txt_Login_PWD {
+    top: 40%
+}
+
+#btn_Login_Submit {
+    top: 60%;
+}
+
+#login button {
+    position: absolute;
+    top: 85%;
+    width: 20%;
+    height: 10%;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#btn_Forget_PWD {
+    left: 10%;
+}
+
+#btn_Login_Register {
+    left: 40%;
+}
+
+#btn_Login_Step {
+    left: 70%;
+}
+
+/* register */
+
+#register {
+    z-index: auto;
+}
+
+#frm_Register label {
+    position: absolute;
+    left: 10%;
+    width: 20%;
+    height: 11%;
+}
+
+#frm_Register input {
+    position: absolute;
+    left: 40%;
+    width: 50%;
+    height: 11%;
+    box-shadow: 1px 1px 1px 1px gray;
+}
+
+#lbl_Register_Name, #txt_Register_Name {
+    top: 8%;
+}
+
+#lbl_Register_Email, #txt_Register_Email {
+    top: 22%;
+}
+
+#lbl_Register_PWD, #txt_Register_PWD {
+    top: 36%;
+}
+
+#lbl_Register_Cfm_PWD, #txt_Register_Cfm_PWD {
+    top: 50%;
+}
+
+#btn_Register_Submit {
+    top: 65%;
+}
+
+#register button {
+    position: absolute;
+    top: 84%;
+    width: 20%;
+    height: 12%;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#btn_Register_Back {
+    left: 10%;
+}
+
+#btn_Register_Step {
+    left: 70%;
+}
+
+/********************************/
+/*                              */
+/*       end 登录 and 注册       */
+/*                              */
+/********************************/
+
+/********************************/
+/*                              */
+/*            模式选择           */
+/*                              */
+/********************************/
+
+#mode_Select {
+    z-index: auto;
+}
+
+#mode_Select button {
+    position: absolute;
+    left: 25%;
+    height: 15%;
+    width: 50%;
+    background-color: #ffeedd;
+    border-radius: 5%/25%;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+#mode_Select button:hover {
+    box-shadow: 0 0 2px 2px gray inset;
+}
+
+#btn_Mode_Campaign {
+    top: 12.5%;
+}
+
+#btn_Mode_Multiplayer {
+    top: 32.5%;
+}
+
+#btn_Mode_More {
+    top: 52.5%;
+}
+
+#btn_Mode_Back {
+    top: 72.5%;
+}
+
+/********************************/
+/*                              */
+/*         end 模式选择          */
+/*                              */
+/********************************/
+
+/********************************/
+/*                              */
+/*          Game Info           */
+/*                              */
+/********************************/
+
+#game_Info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: auto;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    cursor: default;
+}
+
+/**********************************/
+#player_Info {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background: linear-gradient(green 0%, hsl(32, 100%, 91%) 75%, hsl(41, 75%, 62%) 90%, hsl(37, 80%, 52%) 95%, hsl(31, 100%, 55%) 100%);
+    background: -webkit-linear-gradient(green 0%, hsl(32, 100%, 91%) 75%, hsl(41, 75%, 62%) 90%, hsl(37, 80%, 52%) 95%, hsl(31, 100%, 55%) 100%);
+    /*    box-shadow: 0 0 2px 2px gray inset;*/
+    /*    border-radius: 2%/0.5%;*/
+    overflow: hidden;
+}
+
+#personal_Info, #friends_Info {
+    position: absolute;
+    left: 2.5%;
+    width: 95%;
+    border-radius: 3%/2.5%;
+    /*    box-shadow: 0 0 1.5px 1.5px gray inset;*/
+}
+
+#personal_Info {
+    top: 1%;
+    height: 50%;
+}
+
+#personal_Character {
+    position: absolute;
+    top: 2.5%;
+    left: 5%;
+    width: 90%;
+    height: 50%;
+    border-radius: 5%/5%;
+    box-shadow: 0 0 1px 1px yellow;
+}
+
+#personal_Name {
+    position: absolute;
+    left: 5%;
+    top: 55%;
+    height: 15%;
+    overflow: hidden;
+}
+
+#personal_Grade {
+    position: absolute;
+    left: 5%;
+    top: 75%;
+    height: 15%;
+    overflow: hidden;
+}
+
+#friends_Info {
+    top: 45%;
+    height: 44.5%;
+}
+
+#game_Info_Back {
+    position: absolute;
+    left: 2.5%;
+    top: 90%;
+    width: 95%;
+    height: 9%;
+    box-shadow: 2px 2px 2px 2px gray;
+}
+
+/*****************************/
+#parting_Line {
+    position: absolute;
+    top: 0;
+    left: 20%;
+    width: 0px;
+    height: 100%;
+    background-color: #ffbe18;
+    z-index: 10;
+    box-shadow: 0 0 2px 2px gray;
+}
+
+/*****************************/
+#lobby_Sidebar {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 89%;
+    background-color: hsla(120, 65%, 75%, 0.8);
+    border-radius: 3%/1%;
+    transition: left 0.5s;
+    -webkit-transition: left 0.5s;
+}
+
+.active {
+    left: 20%;
+}
+
+.inactive {
+    left: 0;
+}
+
+/**********************************/
+#head_Tab {
+    position: absolute;
+    left: 20%;
+    top: 0;
+    width: 80%;
+    height: 10%;
+    background: linear-gradient(black 50%, hsl(32, 100%, 91%) 75%, hsl(31, 100%, 55%) 100%);
+    background: -webkit-linear-gradient(black 50%, hsl(32, 100%, 91%) 75%, hsl(31, 100%, 55%) 100%);
+}
+
+#head_Tab div.head_Tab {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(hsl(31, 100%, 55%) 0%, hsl(32, 100%, 91%) 75%, hsl(41, 75%, 62%) 90%, hsl(37, 80%, 52%) 95%, hsl(31, 100%, 55%) 100%);
+    background: -webkit-linear-gradient(hsl(31, 100%, 55%) 0%, hsl(32, 100%, 91%) 75%, hsl(41, 75%, 62%) 90%, hsl(37, 80%, 52%) 95%, hsl(31, 100%, 55%) 100%);
+    /*    border-radius: 2% 2% 0 0 /7% 7% 7% 7%;*/
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    box-shadow: 0 0 1px 1px green inset;
+}
+
+#head_Tab div.selected {
+    background: linear-gradient(hsl(280, 100%, 98%) 0%, hsl(31, 100%, 55%) 100%);
+    background: -webkit-linear-gradient(hsl(280, 100%, 98%) 0%, hsl(31, 100%, 55%) 100%);
+    box-shadow: none;
+}
+
+#head_Tab div:hover {
+    /*    border-radius: 5px/5px;*/
+    /*    box-shadow: 0 0 1px 1px blue inset;*/
+    background: #0A3B76;
+}
+
+#head_Campaign_Info, #head_Lobby_Info {
+    left: 0%;
+}
+
+#head_Personal_Storage {
+    left: 25%;
+}
+
+#head_System_Gift {
+    left: 50%;
+}
+
+#head_Game_Store {
+    left: 75%;
+}
+
+/**********************************/
+#campaign_Info,
+#lobby_Info,
+#personal_Storage,
+#system_Gift,
+#game_Store {
+    position: absolute;
+    left: 20%;
+    top: 10%;
+    width: 80%;
+    height: 90%;
+    background: linear-gradient(hsl(31, 100%, 55%) 0%, hsl(32, 100%, 80%) 30%, hsl(195, 2%, 15%) 88%, hsl(195, 3%, 75%) 100%);
+    background: -webkit-linear-gradient(hsl(31, 100%, 55%) 0%, hsl(32, 100%, 80%) 30%, hsl(195, 2%, 15%) 88%, hsl(195, 3%, 75%) 100%);
+}
+
+#personal_Storage,
+#system_Gift,
+#game_Store {
+    z-index: 100;
+}
+
+/*************************************** 战役模式 *************************************/
+#map_Info {
+    position: absolute;
+    left: 5%;
+    top: 2.5%;
+    width: 90%;
+    height: 45%;
+}
+
+#campaign_Map_Record, #campaign_map_Info {
+    position: absolute;
+    top: 2.5%;
+    width: 20%;
+    height: 95%;
+    text-align: left;
+    overflow: hidden;
+    box-shadow: 0 0 1px 2px green inset;
+    border-radius: 5%/5%;
+}
+
+#campaign_Map_Record p, #campaign_map_Info p {
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    padding: 5%;
+}
+
+#campaign_Map_Record {
+    left: 0;
+}
+
+#campaign_map_Info {
+    left: 80%;
+}
+
+#map_Info img {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+    border-radius: 2%/5%;
+    box-shadow: 0 0 5px 1px yellow inset, 0 0 5px 3px yellow;
+}
+
+#campaign_Slip_Control {
+    position: absolute;
+    left: 16.125%;
+    top: 55%;
+    width: 67.5%;
+    height: 40%;
+}
+
+#left_Arrow, #right_Arrow {
+    position: absolute;
+    top: 62.5%;
+    width: 10%;
+    height: 25%;
+    background-size: 100% 100%;
+}
+
+#left_Arrow {
+    left: 5%;
+    background-image: url("../images/ui/arrow-left.png");
+}
+
+#right_Arrow {
+    left: 84.75%;
+    background-image: url("../images/ui/arrow-right.png");
+}
+
+#left_Arrow:hover {
+    background-image: url("../images/ui/arrow-left-hover.png");
+}
+
+#right_Arrow:hover {
+    background-image: url("../images/ui/arrow-right-hover.png");
+}
+
+.level {
+    background: linear-gradient(270deg, hsl(43, 89%, 62%) 0%, hsl(188, 100%, 72%) 30%, hsl(218, 100%, 59%) 100%);
+    background: -webkit-linear-gradient(270deg, hsl(43, 89%, 62%) 0%, hsl(188, 100%, 72%) 30%, hsl(218, 100%, 59%) 100%);
+    border-radius: 10% /10%;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    /*    transition: none;*/
+    transition-timing-function: ease;
+    overflow: hidden;
+}
+
+.left_Level, .right_Level, .left_Show_Level, .right_Show_Level {
+    position: absolute;
+    top: 20%;
+    height: 60%;
+    box-shadow: 0 0 1px 1px green inset, 0 0 1px 1px green;
+}
+
+.left_Level {
+    left: 0;
+    width: 0;
+}
+
+.left_Show_Level {
+    left: 0%;
+    width: 22.5%;
+}
+
+.selected_Level {
+    position: absolute;
+    left: 26.125%;
+    top: 0;
+    width: 47.5%;
+    height: 100%;
+    box-shadow: 0 0 5px 2px yellow inset, 0 0 5px 1px yellow;
+    z-index: 1;
+}
+
+@-webkit-keyframes selected_Level {
+    0% {
+        box-shadow: 0 0 5px 5px #fff359 inset, 0 0 5px 5px #ffc43e;
+    }
+    25% {
+        box-shadow: 0 0 5px 5px #ffe8c4 inset, 0 0 5px 5px #fff4b6;
+    }
+    50% {
+        box-shadow: 0 0 5px 5px #fffcb6 inset, 0 0 6px 5px #fffcb6;
+    }
+    70% {
+        box-shadow: 0 0 5px 5px #ffe8c4 inset, 0 0 5px 5px #fff4b6;
+    }
+    100% {
+        box-shadow: 0 0 5px 5px #fff359 inset, 0 0 5px 5px #ffc43e;
+    }
+}
+
+@keyframes selected_Level {
+    0% {
+        box-shadow: 0 0 5px 5px #fff359 inset, 0 0 5px 5px #ffc43e;
+    }
+    25% {
+        box-shadow: 0 0 5px 5px #ffe8c4 inset, 0 0 5px 5px #fff4b6;
+    }
+    50% {
+        box-shadow: 0 0 5px 5px #fffcb6 inset, 0 0 6px 5px #fffcb6;
+    }
+    70% {
+        box-shadow: 0 0 5px 5px #ffe8c4 inset, 0 0 5px 5px #fff4b6;
+    }
+    100% {
+        box-shadow: 0 0 5px 5px #fff359 inset, 0 0 5px 5px #ffc43e;
+    }
+}
+
+.selected_Level {
+    -webkit-animation-name: selected_Level;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.selected_Level {
+    animation-name: selected_Level;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+.right_Show_Level {
+    left: 77.5%;
+    width: 22.5%;
+}
+
+.right_Level {
+    left: 100%;
+    width: 0;
+}
+
+.star, .level_Lock {
+    position: absolute;
+    top: 0;
+    height: 25%;
+    width: 25%;
+}
+
+.star {
+    background-image: url("../images/ui/star.png");
+    background-size: 100% 100%;
+}
+
+.level_One_Star {
+    left: 0;
+}
+
+.level_Two_Star {
+    left: 25%;
+}
+
+.level_Three_Star {
+    left: 50%;
+}
+
+.level_Lock {
+    left: 75%;
+    background-image: url("../images/ui/lock.png");
+    background-size: 100% 100%;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.level_Title {
+    position: absolute;
+    top: 35%;
+    width: 100%;
+    height: 50%;
+}
+
+/*************************************** 游戏大厅` *************************************/
+
+#btn_Sidebar_Flip {
+    position: absolute;
+    top: 30%;
+    left: -3%;
+    width: 6%;
+    height: 8%;
+    background-color: #4fb6ff;
+    border-radius: 50%;
+    box-shadow: 0 0 2px 2px gray, 0 0 2px 2px gray inset;
+    z-index: 11;
+}
+
+#btn_Sidebar_Flip:hover {
+    background: yellow;
+}
+
+#lobby_Rooms {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 85%;
+    height: 80%;
+    overflow: hidden;
+    /*box-shadow: 0 0 1px 1px green ;*/
+}
+
+/*************************** room info 兄弟元素 *****************/
+.room_Info {
+    position: absolute;
+    width: 30%;
+    height: 45%;
+    border-radius: 5%;
+    /*    box-shadow: 0 0 1px 1px hsla(200, 80%, 75%, 0.9);*/
+    background: hsla(120, 65%, 75%, 0.3);
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+}
+
+#create_Room {
+    background-image: url("../images/ui/join.png");
+    background-size: 50% 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: none;
+}
+
+.room_Top {
+    top: -50%;
+}
+
+.room_Top_Show {
+    top: 1%;
+}
+
+.room_Down_Show {
+    top: 54%;
+}
+
+.room_Down {
+    top: 110%;
+}
+
+.room_Left {
+    left: 1%;
+}
+
+.room_Center {
+    left: 35%;
+}
+
+.room_Right {
+    left: 69%;
+}
+
+/************room info 子元素*************/
+.room_Number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17.5%;
+    height: 20%;
+    background-color: #fffcb6;
+    border-radius: 25%;
+    box-shadow: 0 0 1px 1px #268b21, 0 0 1px 1px #228b22 inset;
+}
+
+.room_Join_Btn {
+    position: absolute;
+    top: 0;
+    left: 82.5%;
+    width: 17.5%;
+    height: 17.5%;
+    background-image: url("../images/ui/join.png");
+    background-size: 100% 100%;
+}
+
+.room_Join_Btn_Disable {
+    background-image: url("../images/ui/join-disable.png");
+}
+
+.room_Player {
+    position: absolute;
+    width: 17.5%;
+    height: 17.5%;
+    background-size: 100% 100%;
+    border-radius: 10%;
+}
+
+.landlord {
+    left: 41.25%;
+    top: 0;
+    background-image: url("../images/characters/man_01.png");
+}
+
+.player_2nd {
+    left: 82.5%;
+    top: 41.25%;
+    background-image: url("../images/ui/profile-01.png");
+}
+
+.player_3th {
+    left: 82.5%;
+    top: 82.5%;
+    background-image: url("../images/ui/profile-01.png");
+}
+
+.player_4th {
+    left: 41.25%;
+    top: 82.5%;
+    background-image: url("../images/ui/profile-01.png");
+}
+
+.player_5th {
+    left: 0;
+    top: 82.5%;
+    background-image: url("../images/ui/profile-01.png");
+}
+
+.player_6th {
+    left: 0;
+    top: 41.25%;
+}
+
+/*************************** room *****************/
+.room {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+    border-radius: 5%;
+    background-color: #DAC8A7;
+    box-shadow: 0 0 1px 1px gray;
+}
+
+.room_Name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20%;
+    width: 75%;
+    overflow: hidden;
+    box-shadow: 0 0 1px 1px gray;
+    border-radius: 7.5%/30%;
+    text-align: center;
+}
+
+.room_Lock {
+    position: absolute;
+    left: 80%;
+    top: 0;
+    width: 20%;
+    height: 20%;
+    background-image: url("../images/ui/lock.png");
+    background-size: 100% 100%;
+}
+
+.room_Map {
+    position: absolute;
+    left: 5%;
+    top: 22.5%;
+    width: 90%;
+    height: 55%;
+    background-image: url("../images/maps/level-1.png");
+    background-size: 100% 100%;
+    border-radius: 5%/8%;
+    box-shadow: 0 0 1px 1px gray;
+}
+
+.room_Players_Info {
+    position: absolute;
+    left: 0;
+    top: 80%;
+    width: 25%;
+    height: 20%;
+    box-shadow: 0 0 1px 1px gray;
+    overflow: hidden;
+    border-radius: 20%/30%;
+}
+
+.room_State {
+    position: absolute;
+    top: 80%;
+    left: 30%;
+    width: 70%;
+    height: 20%;
+    text-align: center;
+    border-radius: 5%/15%;
+    box-shadow: 0 0 1px 1px gray;
+    overflow: hidden;
+}
+
+/*************************** room_Slider *****************/
+#room_Slider {
+    position: absolute;
+    top: 0;
+    left: 91%;
+    width: 8%;
+    height: 90%;
+}
+
+#room_Slider_Up_Arrow, #room_Slider_Down_Arrow {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 5%;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+#room_Slider_Up_Arrow:hover {
+    background-image: url("../images/ui/arrow-up-hover.png");
+}
+
+#room_Slider_Down_Arrow:hover {
+    background-image: url("../images/ui/arrow-down-hover.png");
+}
+
+#room_Slider_Up_Arrow {
+    top: 5%;
+    background-image: url("../images/ui/arrow-up.png");
+}
+
+#room_Slider_Down_Arrow {
+    top: 90%;
+    background-image: url("../images/ui/arrow-down.png");
+}
+
+#room_Slider_Bar {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    width: 10%;
+    height: 80%;
+    background-color: darkgreen;
+    box-shadow: 0 0 1px 1px gray, 0 0 1px 1px gray inset;
+}
+
+#room_Slider_Btn {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    width: 70%;
+    height: 8.5%;
+    border-radius: 50%;
+    background-color: gold;
+    box-shadow: 0 0 2px 2px darkgreen, 0 0 2px 2px darkgreen inset;
+}
+
+#room_Slider_Btn:hover {
+    background: #A36223;
+}
+
+/*************************** lobby_buttons *****************/
+#lobby_buttons {
+    position: absolute;
+    left: 7.5%;
+    top: 90%;
+    width: 90%;
+    height: 9.45%;
+    /*    background-color: palevioletred;*/
+}
+
+.lobby_btn {
+    position: absolute;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    box-shadow: 2px 2px 1px 1px gray;
+}
+
+#btn_Quickly_Join {
+    left: 0;
+}
+
+#btn_Create_Room {
+    left: 26%;
+}
+
+#btn_Ready {
+    left: 52%;
+}
+
+#btn_Quit_Room {
+    left: 78%;
+}
+
+/********************************/
+/*                              */
+/*        end Game Info         */
+/*                              */
+/********************************/
+
+/********************************/
+/*                              */
+/*        loader_Screen         */
+/*                              */
+/********************************/
+
+#loader_Screen {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    width: 80%;
+    height: 15%;
+}
+
+#loader_Canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    box-shadow: 0 0 2px 2px yellow, 0 0 30px 10px yellow, 0 0 10px 5px yellow inset;
+    border-radius: 3%/50%;
+    background: gray;
+}
+
+#loader_Percent {
+    position: absolute;
+    top: 55%;
+    left: 0;
+    height: 50%;
+    width: 100%;
+    color: green;
+}
+
+/********************************/
+/*                              */
+/*      end loader_Screen       */
+/*                              */
+/********************************/
+
+/********************************/
+/*                              */
+/*        game interface        */
+/*                              */
+/********************************/
+
+#game_Interface {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: green;
+    text-align: center;
+}
+
+#main_Map {
+    position: absolute;
+    width: 100%;
+    height: 70%;
+    background-color: #805974;
+}
+
+#main_Back_Canvas, #main_Fore_Canvas {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+#game_Messages {
+    position: absolute;
+    left: 2px;
+    top: 0;
+    width: 30%;
+    height: 10%;
+    color: yellow;
+    text-align: left;
+    /*    background:green;*/
+    overflow: hidden;
+}
+
+#control_Panel {
+    position: absolute;
+    left: 0;
+    top: 65%;
+    width: 100%;
+    height: 35%;
+    /*    background-color: yellow;*/
+
+}
+
+#left_Panel {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    width: 27%;
+    height: 100%;
+    background-color: #efb479;
+    border-radius: 0 5% 0 0/ 0 10% 0 0;
+    box-shadow: 0 0 5px 2px #eeffdd;
+    overflow: hidden;
+}
+
+#micro_Back_Canvas, #micro_Fore_Canvas {
+    position: absolute;
+    left: 0%;
+    top: 5%;
+    width: 97%;
+    height: 95%;
+}
+
+#micro_Back_Canvas {
+    border-radius: 0 3% 0 0/ 0 6% 0 0;
+}
+
+#center_Panel {
+    position: absolute;
+    left: 27%;
+    top: 20%;
+    width: 46%;
+    height: 80%;
+    background-color: #efb479;
+    /*    border-radius: 3% 3% 0 0/ 8% 8% 0 0;*/
+    box-shadow: 0 0 5px 2px #eeffdd;
+}
+
+#info_A {
+    position: absolute;
+    left: 0%;
+}
+
+#info_B {
+    position: absolute;
+    left: 54.5%;
+}
+
+#info_A, #info_B {
+    top: 0%;
+    width: 45.5%;
+    height: 100%;
+    border-radius: 3% 3% 0 0/ 6% 6% 0 0;
+    box-shadow: 0 0 5px 2px #eeffdd;
+    background: gray;
+}
+
+/* info a and b  inside*/
+#info_A_Picture, #info_B_Picture {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 49%;
+    height: 90%;
+    box-shadow: 0 0 1px 1px greenyellow;
+    background-size: 100% 100%;
+    border-radius: 5%;
+}
+
+#info_A_Picture{
+    background-image: url("../images/favicon.png");
+}
+
+#info_A_Title, #info_A_1, #info_A_2, #info_A_3, #info_A_4,
+#info_B_Title, #info_B_1, #info_B_2, #info_B_3, #info_A_B {
+    position: absolute;
+    left: 55%;
+    width: 43%;
+    height: 20%;
+    box-shadow: 0 0 1px 1px greenyellow;
+}
+
+#info_A_Title, #info_B_Title {
+    top: 5%;
+}
+
+#info_A_1, #info_B_1 {
+    top: 28.333333333333333333%;
+}
+
+#info_A_2, #info_B_2 {
+    top: 51.6666666666666666%;
+}
+
+#info_A_3, #info_B_3 {
+    top: 75%;
+}
+
+#chart_Input {
+    position: absolute;
+    top: 0;
+    left: 27.25%;
+    height: 17%;
+    width: 45.5%;
+    background-color: transparent;
+    color: yellow;
+    border-radius: 5px;
+    border-color: #eeffdd;
+    box-shadow: 0 0 5px 2px #eeffdd;
+    z-index: 1;
+    /*    visibility: hidden;*/
+}
+
+#chart_Input:focus{
+    background-color: transparent;
+}
+
+#setting_Panel {
+    position: absolute;
+    top: 3%;
+    left: 46.25%;
+    width: 7.5%;
+    height: 97%;
+    background-color: gray;
+
+}
+
+#game_Pause, #game_Mute, #full_Screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    border-radius: 2px;
+    box-shadow: 0 0 1px 1px greenyellow;
+    background-size: 100% 100%;
+}
+
+#game_Pause {
+    top: 0%;
+    background-image: url("../images/ui/Pause.png");
+}
+
+#game_Mute {
+    top: 33.33333%;
+    background-image: url("../images/ui/Mute.png");
+}
+
+#full_Screen {
+    top: 66.777777777%;
+    background-image: url("../images/ui/Fullscreen.png");
+}
+
+#right_Panel {
+    position: absolute;
+    left: 73%;
+    top: 0%;
+    width: 27%;
+    height: 100%;
+    background-color: #efb479;
+    border-radius: 5% 0 0 0/ 10% 0 0 0;
+    box-shadow: 0 0 5px 2px #eeffdd;
+    overflow: hidden;
+}
+
+.btns_Group {
+    position: absolute;
+    top: 7%;
+    left: 4%;
+    width: 96%;
+    height: 93%;
+    border-radius: 3% 0 0 0/ 6% 0 0 0;
+    background: #efb479;
+    visibility:hidden;
+}
+
+#btns_Mainframe{
+    visibility:visible;
+}
+
+.btn_Build {
+    position: absolute;
+    width: 23%;
+    height: 45%;
+    box-shadow: 0 0 1px 1px gray;
+    border-radius: 10%;
+    background: gray;
+    background-size: 100% 100%;
+}
+
+.btn_Build:nth-child(1), .btn_Build:nth-child(2), .btn_Build:nth-child(3), .btn_Build:nth-child(4) {
+    top: 0;
+}
+
+.btn_Build:nth-child(5), .btn_Build:nth-child(6), .btn_Build:nth-child(7), .btn_Build:nth-child(8) {
+    top: 50%;
+}
+
+.btn_Build:nth-child(1), .btn_Build:nth-child(5) {
+    left: 0%;
+}
+
+.btn_Build:nth-child(2), .btn_Build:nth-child(6) {
+    left: 25%;
+}
+
+.btn_Build:nth-child(3), .btn_Build:nth-child(7) {
+    left: 50%;
+}
+
+.btn_Build:nth-child(4), .btn_Build:nth-child(8) {
+    left: 75%;
+}
+
+
+/* 按钮图片 */
+#build_Vehicle{
+    background-image: url("../images/ui/build_Vehicle.png");
+}
+
+#build_Starport{
+    background-image: url("../images/ui/build_Starport.png");
+}
+
+#build_Barracks{
+    background-image: url("../images/ui/build_Barracks.png");
+}
+
+#build_Power_Station{
+    background-image: url("../images/ui/build_Power_Station.png");
+}
+
+#build_Radar{
+    background-image: url("../images/ui/build_Radar.png");
+}
+
+#build_Ground_Turret{
+    background-image: url("../images/ui/build_Ground_Turret.png");
+}
+
+#build_Port{
+    background-image: url("../images/ui/build_Port.png");
+}
+

@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html id="html">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="initial-scale = 1.0, user-scalable = no"/>
+
+    <title>Last Colony RWD</title>
+
+    <link rel="stylesheet" href="./css/main.css"/>
+
+    <script src="./js/jquery-1.9.1.js"></script>
+    <script src="./js/jquery.mousewheel.js"></script>
+
+    <script src="./js/common.js"></script>
+    <script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mouse.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/touch.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/keyboard.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/keyes.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/singleplayer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/multiplayer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/maps.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sidebar.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Definitions for game entities -->
+    <script src="js/buildings.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/vehicles.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/aircraft.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/terrain.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bullets.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/fog.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sounds.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="body">
+<div id="container">
+
+<div id="login">
+    <div class="title">最后殖民地</div>
+    <form id="frm_Login" name="frm_Login">
+        <label id="lbl_login_Name"
+               for="txt_Login_Name">用户名</label>
+        <input type="text"
+               id="txt_Login_Name"
+               name="txt_login_Name"
+               form="frm_Login"
+               placeholder="数字和英文"
+               required="required">
+
+        <label id="lbl_Login_PWD"
+               for="txt_Login_PWD">密 码</label>
+        <input type="password"
+               id="txt_Login_PWD"
+               name="txt_Login_PWD"
+               form="frm_Login"
+               placeholder="密码不能为空"
+               required="required">
+
+        <input type="submit"
+               id="btn_Login_Submit"
+               value="登录">
+    </form>
+    <button id="btn_Forget_PWD">忘密码？</button>
+    <button id="btn_Login_Register">注 册</button>
+    <button id="btn_Login_Step">跳 过</button>
+</div>
+
+<div id="register">
+    <div class="title">最后殖民地</div>
+    <form id="frm_Register" name="frm_Login">
+        <label id="lbl_Register_Name"
+               for="txt_Register_Name">用 户 名</label>
+        <input type="text"
+               id="txt_Register_Name"
+               name="txt_Register_Name"
+               form="frm_Register"
+               placeholder="数字和英文"
+               required="required"/>
+
+        <label id="lbl_Register_Email"
+               for="txt_Register_Email">邮 箱</label>
+        <input type="email"
+               id="txt_Register_Email"
+               name="txt_Register_Email"
+               form="frm_Register"
+               placeholder="lastColony@email.com"
+               required="required"/>
+
+        <label id="lbl_Register_PWD"
+               for="txt_Register_PWD">密 码</label>
+        <input type="password"
+               id="txt_Register_PWD"
+               name="txt_Register_PWD"
+               form="frm_Register"
+               required="required"/>
+
+        <label id="lbl_Register_Cfm_PWD"
+               for="txt_Register_Cfm_PWD">确认密码</label>
+        <input type="password"
+               id="txt_Register_Cfm_PWD"
+               name="txt_Register_Cfm_PWD"
+               form="frm_Register"
+               required="required"/>
+
+        <input id="btn_Register_Submit"
+               type="submit" value="注册"/>
+    </form>
+    <button id="btn_Register_Back">返回</button>
+    <button id="btn_Register_Step">跳过</button>
+</div>
+
+<div id="mode_Select">
+    <div class="title">最后殖民地</div>
+    <div id="btns_Mode">
+        <button id="btn_Mode_Campaign" type="button">战役</button>
+        <button id="btn_Mode_Multiplayer" type="button">对战</button>
+        <button id="btn_Mode_More" type="button">更多</button>
+        <button id="btn_Mode_Back" type="button">返回</button>
+    </div>
+</div>
+
+<div id="game_Info">
+    <div id="player_Info">
+        <div id="personal_Info">
+            <img id="personal_Character" src="images/characters/animal_Koala.jpg">
+
+            <div id="personal_Name">探索者</div>
+            <div id="personal_Grade">8级</div>
+        </div>
+        <div id="friends_Info">
+
+        </div>
+        <button id="game_Info_Back">返回</button>
+    </div>
+
+    <div id="lobby_Sidebar" class="active">侧边栏</div>
+
+    <div id="parting_Line"></div>
+
+    <div id="head_Tab">
+        <div id="head_Campaign_Info" class="selected head_Tab">战役信息</div>
+        <div id="head_Lobby_Info" class="head_Tab hide">房间信息</div>
+        <div id="head_Personal_Storage" class="head_Tab">个人仓库</div>
+        <div id="head_System_Gift" class="head_Tab">系统礼包</div>
+        <div id="head_Game_Store" class="head_Tab">游戏商城</div>
+        <div id="head_Personal_Info">
+
+        </div>
+    </div>
+    <!--战役信息-->
+    <div id="campaign_Info" class="info_Layer">
+        <div id="map_Info">
+            <div id="campaign_Map_Record">
+                <!--<p>记录：850<br>玩家：探索者</p>-->
+            </div>
+            <img id="campaign_Map">
+
+            <div id="campaign_map_Info">
+                <!--<p>-->
+                <!--初战：<br>这是一个古老的传说.-->
+                 <!--</p>-->
+            </div>
+        </div>
+
+        <div id="left_Arrow"></div>
+
+        <div id="campaign_Slip_Control">
+        </div>
+
+        <div id="right_Arrow"></div>
+    </div>
+    <!--大厅信息-->
+    <div id="lobby_Info" class="info_Layer hide" onclick="multiplayer.start()">
+
+    <div id="btn_Sidebar_Flip"></div>
+
+    <div id="lobby_Rooms">
+    <div class="room_Info">
+        <div class="room_Number">1</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name">哇咔哇咔</div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info">5/6</div>
+            <div class="room_State">游戏中</div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">2</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">3</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+
+    <div class="room_Info">
+        <div class="room_Number">4</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">5</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">6</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">7</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">8</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">9</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+
+    <div class="room_Info">
+        <div class="room_Number">10</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info room_Selected">
+        <div class="room_Number">11</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+    <div class="room_Info">
+        <div class="room_Number">12</div>
+        <div class="room_Join_Btn"></div>
+        <div class="room_Player landlord"></div>
+        <div class="room_Player player_2nd"></div>
+        <div class="room_Player player_3th"></div>
+        <div class="room_Player player_4th"></div>
+        <div class="room_Player player_5th"></div>
+        <div class="room_Player player_6th"></div>
+
+        <div class="room">
+            <div class="room_Name"></div>
+            <div class="room_Lock"></div>
+            <div class="room_Map"></div>
+            <div class="room_Players_Info"></div>
+            <div class="room_State"></div>
+        </div>
+    </div>
+
+
+    <div id="create_Room" class="room_Info"></div>
+    </div>
+
+    <div id="room_Slider">
+        <div id="room_Slider_Up_Arrow"></div>
+        <div id="room_Slider_Bar"></div>
+        <div id="room_Slider_Btn"></div>
+        <div id="room_Slider_Down_Arrow"></div>
+    </div>
+
+    <div id="lobby_buttons">
+        <button id="btn_Quickly_Join" class="lobby_btn">快速进入</button>
+        <button id="btn_Create_Room" class="lobby_btn">新建房间</button>
+        <button id="btn_Ready" class="lobby_btn">准备</button>
+        <button id="btn_Quit_Room" class="lobby_btn">退出房间</button>
+    </div>
+    </div>
+
+    <div id="personal_Storage" class="info_Layer hide">
+        个人仓库
+    </div>
+
+    <div id="system_Gift" class="info_Layer hide">
+        系统礼包
+    </div>
+
+    <div id="game_Store" class="info_Layer hide">
+        游戏商城
+    </div>
+</div>
+
+<div id="loader_Screen">
+    <canvas id="loader_Canvas"></canvas>
+    <div id="loader_Percent"></div>
+</div>
+
+<div id="game_Interface">
+    <div id="main_Map">
+        <canvas id="main_Back_Canvas"></canvas>
+        <canvas id="main_Fore_Canvas"></canvas>
+    </div>
+    <div id="game_Messages">
+        探索者:我来了，快啊！<br>
+        大雨点：好的，马上到。
+    </div>
+    <div id="control_Panel">
+        <div id="left_Panel">
+            <canvas id="micro_Back_Canvas"></canvas>
+            <canvas id="micro_Fore_Canvas"></canvas>
+        </div>
+
+        <div id="center_Panel">
+            <div id="info_A">
+                <div id="info_A_Picture"></div>
+                <div id="info_A_Title">探索者</div>
+                <div id="info_A_1"></div>
+                <div id="info_A_2"></div>
+                <div id="info_A_3"></div>
+            </div>
+            <div id="setting_Panel">
+                <div id="game_Mute" title="静音"></div>
+                <div id="game_Pause" title="返回或暂停"></div>
+                <div id="full_Screen" title="全屏"></div>
+            </div>
+            <div id="info_B">
+                <div id="info_B_Picture"></div>
+                <div id="info_B_Title"></div>
+                <div id="info_B_1"></div>
+                <div id="info_B_2"></div>
+                <div id="info_B_3"></div>
+            </div>
+        </div>
+
+        <input id="chart_Input"/>
+
+        <div id="right_Panel">
+            <div id="btns_Mainframe" class="btns_Group">
+                <div id="build_Vehicle" title="车辆厂" class="btn_Build"></div>
+                <div id="build_Starport" title="机场" class="btn_Build"></div>
+                <div id="build_Barracks" title="兵营" class="btn_Build"></div>
+                <div id="build_Power_Station" title="电厂" class="btn_Build"></div>
+                <div id="build_Radar" title="雷达" class="btn_Build"></div>
+                <div id="build_Ground_Turret" title="炮塔" class="btn_Build"></div>
+                <div id="build_Port" title="船厂" class="btn_Build"></div>
+            </div>
+            <div id="btns_Vehicle" class="btns_Group">
+                <div id="build_Scout_Tank" class="btn_Build">侦察坦克</div>
+                <div id="build_Heavy_Tank" class="btn_Build">重型坦克</div>
+                <div id="build_Harvester" class="btn_Build">采矿车</div>
+                <div id="build_Vehicle_1" class="btn_Build">占位1</div>
+                <div id="build_Vehicle_2" class="btn_Build">占位2</div>
+                <div id="build_Vehicle_3" class="btn_Build">占位3</div>
+            </div>
+            <div id="btns_Starport" class="btns_Group">
+                <div id="build_Copter" class="btn_Build">直升机</div>
+                <div id="build_Wraith" class="btn_Build">幽灵机器人</div>
+                <div id="build_Fighter" class="btn_Build">战斗机</div>
+                <div id="build_Starport_1" class="btn_Build">占位1</div>
+                <div id="build_Starport_2" class="btn_Build">占位2</div>
+                <div id="build_Starport_3" class="btn_Build">占位3</div>
+            </div>
+            <div id="btns_Barracks" class="btns_Group">
+                <div id="build_Engineer" class="btn_Build">工程师</div>
+                <div id="build_Infantry" class="btn_Build">步兵</div>
+                <div id="build_Commando" class="btn_Build">突击队</div>
+                <div id="build_Sniper" class="btn_Build">狙击手</div>
+                <div id="build_Spy" class="btn_Build">间谍</div>
+                <div id="build_Police_Dog" class="btn_Build">警犬</div>
+                <div id="build_Barracks_1" class="btn_Build">占位1</div>
+            </div>
+            <div id="btns_Port" class="btns_Group">
+                <div id="build_Aircraft_Carrier" class="btn_Build">航母</div>
+                <div id="build_Destroyer" class="btn_Build">驱逐舰</div>
+                <div id="build_Cruiser" class="btn_Build">巡洋舰</div>
+                <div id="build_Frigate" class="btn_Build">护卫舰</div>
+                <div id="build_Submarine" class="btn_Build">潜艇</div>
+                <div id="build_Port_1" class="btn_Build">占位1</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="message_Box">
+
+</div>
+
+<!--<div id="more_Setting">-->
+<!--更多设置-->
+<!--</div>-->
+
+</div>
+</body>
+</html>
